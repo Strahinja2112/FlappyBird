@@ -1,15 +1,15 @@
 using UnityEngine;
 
 public class Player : MonoBehaviour {
+  public Sprite[] sprites;
   public float gravity = -9.8f;
 
   [SerializeField]
   private float strength = 5f;
+
   private Vector3 direction;
   private SpriteRenderer spriteRenderer;
   private int spriteIndex;
-
-  public Sprite[] sprites;
 
   private void Awake() {
     if (TryGetComponent(out spriteRenderer)) {
