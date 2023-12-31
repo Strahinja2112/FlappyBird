@@ -12,12 +12,7 @@ public class Player : MonoBehaviour {
   private int spriteIndex;
 
   private void Awake() {
-    if (TryGetComponent(out spriteRenderer)) {
-      Debug.Log("NASLO");
-    }
-    else {
-      Debug.Log("NIJE NASLO");
-    }
+    spriteRenderer = GetComponent<SpriteRenderer>();
   }
 
   private void Start() {
