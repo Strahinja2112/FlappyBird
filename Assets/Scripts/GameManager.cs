@@ -3,11 +3,11 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
   private  int score = 0;    
 
-  private void IncreaseScore() {
+  public void IncreaseScore() {
     score++;
   }
 
-  private void GameOver() {
+  public void GameOver() {
     Debug.Log("GAME OVER");  
   }
 

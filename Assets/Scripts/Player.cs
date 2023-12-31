@@ -19,6 +19,16 @@ public class Player : MonoBehaviour {
     InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
   }
 
+  private void OnTriggerEnter2D(Collider2D other) {
+    GameManager manager = FindObjectOfType<GameManager>();
+    if (other.CompareTag("Obstacle")) {
+      manager.GameOver();
+    }
+    else if (other.CompareTag("Scoring")) {
+      manager.IncreaseScore();
+    }
+  }
+
   private void AnimateSprite() {
     spriteIndex++;
     if (spriteIndex >= sprites.Length) {
