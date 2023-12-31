@@ -2,10 +2,35 @@ using UnityEngine;
 
 public class Player : MonoBehaviour {
   public float gravity = -9.8f;
+
   [SerializeField]
   private float strength = 5f;
-
   private Vector3 direction;
+  private SpriteRenderer spriteRenderer;
+  private int spriteIndex;
+
+  public Sprite[] sprites;
+
+  private void Awake() {
+    if (TryGetComponent(out spriteRenderer)) {
+      Debug.Log("NASLO");
+    }
+    else {
+      Debug.Log("NIJE NASLO");
+    }
+  }
+
+  private void Start() {
+    InvokeRepeating(nameof(AnimateSprite), 0.15f, 0.15f);
+  }
+
+  private void AnimateSprite() {
+    spriteIndex++;
+    if (spriteIndex >= sprites.Length) {
+      spriteIndex = 0;
+    }
+    spriteRenderer.sprite = sprites[spriteIndex];
+  }
 
   private void Update() {
     // 0 je LMB, 1 MMB, 2 RMB
