@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-  private  int score = 0;    
+  private int score = 0;    
 
   public void IncreaseScore() {
     score++;
