@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class Pipe : MonoBehaviour {
-  public float speed = 5f;
+  public float movementSpeed = 5f;
   private float leftEdge;
   
   private void Start() {
@@ -9,7 +9,7 @@ public class Pipe : MonoBehaviour {
   }
 
   private void Update() {
-    transform.position += speed * Time.deltaTime * Vector3.left;
+    transform.position += movementSpeed * Time.deltaTime * Vector3.left;
 
     if (transform.position.x < leftEdge) {
       Destroy(gameObject);

@@ -2,7 +2,7 @@ using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour {
-  private int score = 0;  
+  public int Score { get; private set; } = 0;  
 
   public GameObject gameOver; 
   public GameObject playButton; 
@@ -15,13 +15,13 @@ public class GameManager : MonoBehaviour {
   }
 
   public void UpdateScore() {
-    score++;
-    scoreText.text = score.ToString();
+    Score++;
+    scoreText.text = Score.ToString();
   }
 
   public void UpdateScore(int newScore) {
-    score = newScore;
-    scoreText.text = score.ToString();
+    Score = newScore;
+    scoreText.text = Score.ToString();
   }
 
   public void Pause() {

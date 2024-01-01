@@ -6,6 +6,8 @@ public class Spawner : MonoBehaviour {
   public float minHeight = -1f;
   public float maxHeight = 1f;
 
+  private float difference = 0.1f;
+
   private void OnEnable() {
     InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
   }
@@ -16,14 +18,17 @@ public class Spawner : MonoBehaviour {
 
   private void Spawn() {
     GameObject pipes = Instantiate(prefab, transform.position, Quaternion.identity);
-    pipes.transform.position += Vector3.up * Random.Range(minHeight, maxHeight);
-  }
 
-  void Start() {
-      
-  }
+    GameObject topPipe = pipes.transform.Find("PipeTop").gameObject; 
+    GameObject bottomPipe = pipes.transform.Find("PipeBottom").gameObject; 
 
-  void Update() {
-      
+    topPipe.transform.position += Vector3.up * Random.Range(minHeight + difference, maxHeight);
+    bottomPipe.transform.position += Vector3.down * Random.Range(minHeight, maxHeight + difference);
+
+    difference -= 0.05f;
+
+    Debug.Log(difference);
+
+    // pipes.transform.position += Vector3.up * Random.Range(minHeight, maxHeight);
   }
 }
