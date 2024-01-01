@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour {
   public int Score { get; private set; } = 0;  
 
+  public Spawner spawner;
   public GameObject gameOver; 
   public GameObject playButton; 
   public Player player; 
@@ -56,6 +57,7 @@ public class GameManager : MonoBehaviour {
   public void GameOver() {
     gameOver.SetActive(true);
     playButton.SetActive(true);
+    spawner.difference = 0f;
     Pause();
   }
 }
