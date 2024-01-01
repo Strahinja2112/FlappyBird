@@ -29,6 +29,11 @@ public class Player : MonoBehaviour {
     }
   }
 
+  private void OnEnable() {
+    transform.position = new Vector2(transform.position.x, 0);
+    direction = Vector3.zero;
+  }
+
   private void AnimateSprite() {
     spriteIndex++;
     if (spriteIndex >= sprites.Length) {

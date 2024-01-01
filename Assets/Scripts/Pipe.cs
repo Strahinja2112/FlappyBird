@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class Pipes : MonoBehaviour {
+public class Pipe : MonoBehaviour {
   public float speed = 5f;
   private float leftEdge;
   

@@ -456,7 +456,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -210}
+  m_AnchoredPosition: {x: 0, y: 185}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &123006484
@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 0}
-  animationSpeed: 0.5
+  animationSpeed: 1
 --- !u!23 &256426046
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -655,7 +655,7 @@ GameObject:
   - component: {fileID: 314505685}
   - component: {fileID: 314505688}
   m_Layer: 5
-  m_Name: StartButton
+  m_Name: PlayButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -726,7 +726,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1909662219}
         m_TargetAssemblyTypeName: GameManager, Assembly-CSharp
-        m_MethodName: OnStart
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1374,7 +1374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78285b1eb81e94f4cbe30e20230a6c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 123006482}
+  gameOver: {fileID: 123006482}
+  playButton: {fileID: 314505683}
+  player: {fileID: 18593739}
   scoreText: {fileID: 1766485997}
 --- !u!4 &1909662220
 Transform:

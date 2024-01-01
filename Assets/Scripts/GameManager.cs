@@ -32,11 +32,16 @@ public class GameManager : MonoBehaviour {
   public void Play() {
     Time.timeScale = 1f;
     player.enabled = true;
-    
+
     gameOver.SetActive(false);
     playButton.SetActive(false);
     
     UpdateScore(0);
+
+    Pipe[] pipes = FindObjectsOfType<Pipe>();
+    foreach (var pipe in pipes) {
+      Destroy(pipe.gameObject); 
+    }
   }
 
   public void PlayPause() {
