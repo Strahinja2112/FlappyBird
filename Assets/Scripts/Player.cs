@@ -25,7 +25,7 @@ public class Player : MonoBehaviour {
       manager.GameOver();
     }
     else if (other.CompareTag("Scoring")) {
-      manager.IncreaseScore();
+      manager.UpdateScore();
     }
   }
 
@@ -38,8 +38,8 @@ public class Player : MonoBehaviour {
   }
 
   private void Update() {
-    // 0 je LMB, 1 MMB, 2 RMB
-    if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0)) {
+    // 0 je LMB, 1 MMB, 2 RMB || Input.GetMouseButtonDown(0)
+    if (Input.GetKeyDown(KeyCode.Space)) {
       direction = Vector3.up * strength;
     }
 
