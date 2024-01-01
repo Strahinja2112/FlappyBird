@@ -530,7 +530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 0}
-  animationSpeed: 1
+  animationSpeed: 0.84
 --- !u!23 &256426046
 MeshRenderer:
   m_ObjectHideFlags: 0
