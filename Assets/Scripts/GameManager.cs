@@ -3,11 +3,11 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour {
   private int score = 0;  
-  private bool gameOver = false;
   public GameObject image;  
   public TextMeshProUGUI scoreText;  
 
-  private void Start() {
+  private void Awake() {
+    Application.targetFrameRate = 120;
     Time.timeScale = 0;
   }
 
@@ -18,7 +18,7 @@ public class GameManager : MonoBehaviour {
 
   public void GameOver() {
     image.SetActive(true);
-    gameOver = true;
+    Time.timeScale = 0;
   }
 
   public void OnStart() {
